@@ -13,7 +13,11 @@ inicial na base de dados**
 mvn clean install -DskipTests
 ```
 
-**Execute o projeto na sua IDE favorita!**
+**Rode o projeto pelo terminal**
+
+```bash
+mvn spring-boot:run
+```
 
 **Referências/Agradecimentos**
 
