@@ -5,7 +5,7 @@ LAB para execução de um projeto spring boot utilizando a tecnologia jooq para 
 - Maven
 - Jdk 21
 
-**No terminal  execute a instrução abaixo para gerar as classes de mapeamento do banco de dados e carregamento do script inicial na base de dados
+**No terminal  execute a instrução abaixo para gerar as classes de mapeamento do banco de dados e carregamento do script inicial na base de dados**
 ```bash
 mvn clean install -DskipTests
 ```
