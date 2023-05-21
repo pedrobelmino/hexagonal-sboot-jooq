@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 @RestController
 @RequestMapping("book")
@@ -21,10 +24,20 @@ public class BookController {
     @Autowired
     private BookMapper bookMapper;
 
+    @GetMapping(produces = "application/json")
+    public ResponseEntity<List<BookResponse>> findAll() {
+        return ResponseEntity.ok( bookService
+                .findAll()
+                .stream()
+                .map(dto -> bookMapper.bookDTOToResponse(dto))
+                .toList()
+        );
+    }
+
     @GetMapping(path = "/{id}", produces = "application/json")
-    public ResponseEntity<BookResponse> getById(@PathVariable int id) {
+    public ResponseEntity<BookResponse> findOne(@PathVariable int id) {
         return bookService
-                .getById(id)
+                .findOne(id)
                 .map(dto -> bookMapper.bookDTOToResponse(dto))
                 .map(ResponseEntity::ofNullable)
                 .orElse(ResponseEntity.notFound().build());
