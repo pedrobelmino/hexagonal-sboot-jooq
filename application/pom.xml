@@ -14,7 +14,7 @@
         <sql-maven-plugin.version>1.5</sql-maven-plugin.version>
         <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
         <h2.version>2.1.214</h2.version>
-        <java.version>20</java.version>
+        <java.version>11</java.version>
     </properties>
 
     <groupId>br.com.pedrobelmino</groupId>

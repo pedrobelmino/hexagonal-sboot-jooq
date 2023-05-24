@@ -1,6 +1,6 @@
 package br.com.pedrobelmino.springbootjooq.presentation;
 
-import br.com.pedrobelmino.springbootjooq.domain.service.BookService;
+import br.com.pedrobelmino.springbootjooq.service.BookService;
 import br.com.pedrobelmino.springbootjooq.mapper.BookMapper;
 import br.com.pedrobelmino.springbootjooq.presentation.response.BookResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ public class BookController {
                 .findAll()
                 .stream()
                 .map(dto -> bookMapper.bookDTOToResponse(dto))
-                .toList()
+                .collect(Collectors.toList())
         );
     }
 

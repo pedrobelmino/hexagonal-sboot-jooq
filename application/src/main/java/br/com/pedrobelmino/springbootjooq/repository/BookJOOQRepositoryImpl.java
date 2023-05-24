@@ -2,8 +2,7 @@ package br.com.pedrobelmino.springbootjooq.repository;
 
 import br.com.pedrobelmino.springbootjooq.database.public_.tables.Book;
 import br.com.pedrobelmino.springbootjooq.database.public_.tables.records.BookRecord;
-import br.com.pedrobelmino.springbootjooq.domain.pojo.BookDTO;
-import br.com.pedrobelmino.springbootjooq.domain.repository.BookRepository;
+import br.com.pedrobelmino.springbootjooq.domain.BookDTO;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

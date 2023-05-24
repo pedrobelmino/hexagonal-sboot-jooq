@@ -1,6 +1,6 @@
-package br.com.pedrobelmino.springbootjooq.domain.repository;
+package br.com.pedrobelmino.springbootjooq.repository;
 
-import br.com.pedrobelmino.springbootjooq.domain.pojo.BookDTO;
+import br.com.pedrobelmino.springbootjooq.domain.BookDTO;
 
 import java.util.List;
 import java.util.Optional;

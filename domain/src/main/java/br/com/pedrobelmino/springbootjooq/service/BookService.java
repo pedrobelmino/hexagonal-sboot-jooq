@@ -1,7 +1,7 @@
-package br.com.pedrobelmino.springbootjooq.domain.service;
+package br.com.pedrobelmino.springbootjooq.service;
 
-import br.com.pedrobelmino.springbootjooq.domain.pojo.BookDTO;
-import br.com.pedrobelmino.springbootjooq.domain.repository.BookRepository;
+import br.com.pedrobelmino.springbootjooq.domain.BookDTO;
+import br.com.pedrobelmino.springbootjooq.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;

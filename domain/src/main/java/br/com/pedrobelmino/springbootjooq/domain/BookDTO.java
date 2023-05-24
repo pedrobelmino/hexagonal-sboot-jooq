@@ -1,4 +1,4 @@
-package br.com.pedrobelmino.springbootjooq.domain.pojo;
+package br.com.pedrobelmino.springbootjooq.domain;
 
 import lombok.Data;
 
