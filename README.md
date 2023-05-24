@@ -1,4 +1,4 @@
-LAB para execução de um projeto spring boot utilizando a tecnologia jooq para persistência e arquitetura hexagonal para desacoplamento
+LAB para execução de um projeto spring boot utilizando a framework jooq para persistência e arquitetura hexagonal para desacoplamento
 ============================
 
 **Pré-requisitos**
