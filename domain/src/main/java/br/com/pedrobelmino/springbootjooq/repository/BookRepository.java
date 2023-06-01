@@ -1,13 +1,15 @@
 package br.com.pedrobelmino.springbootjooq.repository;
 
-import br.com.pedrobelmino.springbootjooq.domain.BookDTO;
+import br.com.pedrobelmino.springbootjooq.domain.BookDomain;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface BookRepository {
 
-    Optional<BookDTO> findOne(int id);
+    Optional<BookDomain> findOne(int id);
 
-    List<BookDTO> findAll();
+    List<BookDomain> findAll();
+
+    void update(BookDomain bookDomain);
 }

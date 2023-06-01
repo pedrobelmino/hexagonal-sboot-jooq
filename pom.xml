@@ -15,7 +15,7 @@
     <description>Demo project for Spring Boot and jooq</description>
     <packaging>pom</packaging>
     <properties>
-        <java.version>11</java.version>
+        <java.version>20</java.version>
         <dbunit.version>2.7.0</dbunit.version>
         <archunit.version>0.23.1</archunit.version>
     </properties>
@@ -25,20 +25,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.dbunit</groupId>
-            <artifactId>dbunit</artifactId>
-            <version>${dbunit.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.tngtech.archunit</groupId>
-            <artifactId>archunit-junit5</artifactId>
-            <version>${archunit.version}</version>
-            <scope>test</scope>
         </dependency>
 
     </dependencies>

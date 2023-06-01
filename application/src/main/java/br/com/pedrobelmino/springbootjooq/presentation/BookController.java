@@ -1,14 +1,12 @@
 package br.com.pedrobelmino.springbootjooq.presentation;
 
+import br.com.pedrobelmino.springbootjooq.exception.BookNotFoundException;
 import br.com.pedrobelmino.springbootjooq.service.BookService;
 import br.com.pedrobelmino.springbootjooq.mapper.BookMapper;
 import br.com.pedrobelmino.springbootjooq.presentation.response.BookResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -40,7 +38,23 @@ public class BookController {
                 .findOne(id)
                 .map(dto -> bookMapper.bookDTOToResponse(dto))
                 .map(ResponseEntity::ofNullable)
-                .orElse(ResponseEntity.notFound().build());
+                .orElse(
+                        ResponseEntity
+                                .notFound()
+                                .build()
+                );
 
+    }
+
+    @PutMapping(path = "/{id}", produces = "application/json")
+    public ResponseEntity<?> update(@PathVariable int id, @RequestBody BookUpdateRequest bookUpdateRequest) {
+        try{
+            bookService.update(
+                    bookMapper.bookUpdateRequestTODomain(id, bookUpdateRequest)
+            );
+            return ResponseEntity.ok().build();
+        }catch (BookNotFoundException e){
+            return ResponseEntity.notFound().build();
+        }
     }
 }
