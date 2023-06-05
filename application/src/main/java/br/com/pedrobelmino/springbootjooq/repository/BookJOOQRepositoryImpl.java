@@ -20,6 +20,7 @@ public class BookJOOQRepositoryImpl implements BookRepository {
 
     @Override
     public Optional<BookDomain> findOne(int id){
+
         BookRecord bookRecord = new BookRecord();
         bookRecord.setId(id);
         return dsl
@@ -42,9 +43,6 @@ public class BookJOOQRepositoryImpl implements BookRepository {
                 .set(Book.BOOK.TITLE, bookDomain.title())
                 .where(Book.BOOK.ID.eq(bookDomain.id()))
                 .execute();
-
     }
-
-
 
 }

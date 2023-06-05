@@ -21,16 +21,14 @@ public class BookService {
         return bookRepository.findAll();
     }
 
-    public void update(BookDomain bookDomainParam){
-
-        var bookDbOpt = bookRepository.findOne(bookDomainParam.id());
+    public void update(BookDomain bookParam){
+        var bookDbOpt = bookRepository.findOne(bookParam.id());
 
         bookDbOpt.orElseThrow(BookNotFoundException::new);
-        bookDbOpt.ifPresent(bookDb -> {
-            var bookUpdate = new BookDomain(bookDb.id(), bookDomainParam.title());
-            bookRepository.update(bookUpdate);
-        });
 
+        bookDbOpt.ifPresent(bookDomain1 -> {
+            bookRepository.update(bookParam);
+        });
     }
 
 }

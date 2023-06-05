@@ -1,7 +1,7 @@
 package br.com.pedrobelmino.springbootjooq.mapper;
 
 import br.com.pedrobelmino.springbootjooq.domain.BookDomain;
-import br.com.pedrobelmino.springbootjooq.presentation.BookUpdateRequest;
+import br.com.pedrobelmino.springbootjooq.presentation.request.BookUpdateRequest;
 import br.com.pedrobelmino.springbootjooq.presentation.response.BookResponse;
 
 public class BookMapper {

@@ -1,9 +1,11 @@
 package br.com.pedrobelmino.springbootjooq.presentation;
 
 import br.com.pedrobelmino.springbootjooq.exception.BookNotFoundException;
+import br.com.pedrobelmino.springbootjooq.presentation.request.BookUpdateRequest;
 import br.com.pedrobelmino.springbootjooq.service.BookService;
 import br.com.pedrobelmino.springbootjooq.mapper.BookMapper;
 import br.com.pedrobelmino.springbootjooq.presentation.response.BookResponse;
+import org.apache.coyote.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -47,14 +49,15 @@ public class BookController {
     }
 
     @PutMapping(path = "/{id}", produces = "application/json")
-    public ResponseEntity<?> update(@PathVariable int id, @RequestBody BookUpdateRequest bookUpdateRequest) {
+    public ResponseEntity<BookResponse> findOne(@PathVariable int id, @RequestBody BookUpdateRequest bookUpdateRequest) {
         try{
             bookService.update(
-                    bookMapper.bookUpdateRequestTODomain(id, bookUpdateRequest)
-            );
+                    bookMapper.bookUpdateRequestTODomain(id, bookUpdateRequest));
             return ResponseEntity.ok().build();
-        }catch (BookNotFoundException e){
+        }catch(BookNotFoundException bookNotFoundException){
             return ResponseEntity.notFound().build();
         }
+
     }
+
 }
